@@ -9,7 +9,28 @@ https://www.garron.me/en/bits/
 https://www.shellcheck.net/
 
 ## Things
+### Custom bash prompt
+- A default prompt might look like: `User@Device path/to/current/directory $` with or without various colours
+- This can be changed in `~/.bashrc` to customise the prompt
+- [Getting Git branch in the prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
+- [Other people's prompts](https://www.reddit.com/r/linux/comments/2uf5uu/this_is_my_bash_prompt_which_is_your_favorite/)
+- [Other people's prompts](https://www.reddit.com/r/archlinux/comments/5vusvx/here_is_my_bash_prompt_whats_your_favorite/)
+- use `export PS1=...` in the terminal to test a prompt before editing
+
+- Below is a list of PS1 I have tried
+- `[[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh`
+- `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;93m\]\w\[\033[00m\]\$ '`
+- `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;93m\]\w\[\033[00m\]\ $ '`
+- `PS1="[\[$(tput sgr0)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]] [\$?] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \\$\[$(tput sgr0)\] "`
+- `PS1="${debian_chroot:+($debian_chroot)}[\$(if [ \$? = 0]; then echo \[\033[01;91m\]\t]\[\033[00m\]; else echo \[\033[01;92m\]\t\[\033[00m\]; fi)] \[\033[01;93m\]\w\[\033[00m\] $ "`
+- `PS1="[\$(if [ \$? = 0 ]; then echo \[\033[92m\]\t\[\033[0m\]; else echo -e \[\033[91m\]\t\[\033[0m\]; fi;)] [\[\033[1;49;93m\]\w\[\033[0m\]]\$(__git_ps1) [\[\033[1;49;39m\]\$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\[\033[0m\]]\n$ "`
+
+
 ### File/path manipulation/other
+- Change to previous directory
+
+`cd -`
+
 - Count the number of files in the directory with ls [something]
 ```bash
 # That's a lower-case L after wc, and a ONE after ls

@@ -8,3 +8,4 @@ set smarttab
 set ai
 set si
 set tabstop=4
+set nu
