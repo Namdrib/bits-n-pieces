@@ -33,5 +33,5 @@ sudo apt-get -y install apt-fast
 ```
 sudo apt-get python3-dev python3-pip -y
 sudo -H pip3 install numpy scipy nose bs4 matplotlib opencv-python
-jupyter unidecode pyperclip argparse
+jupyter unidecode pyperclip argparse thefuck maybe cheat
 ```

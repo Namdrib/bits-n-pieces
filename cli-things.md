@@ -17,14 +17,7 @@ https://www.shellcheck.net/
 - [Other people's prompts](https://www.reddit.com/r/archlinux/comments/5vusvx/here_is_my_bash_prompt_whats_your_favorite/)
 - use `export PS1=...` in the terminal to test a prompt before editing
 
-- Below is a list of PS1 I have tried
-- `[[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh`
-- `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;93m\]\w\[\033[00m\]\$ '`
-- `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;93m\]\w\[\033[00m\]\ $ '`
-- `PS1="[\[$(tput sgr0)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]] [\$?] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \\$\[$(tput sgr0)\] "`
-- `PS1="${debian_chroot:+($debian_chroot)}[\$(if [ \$? = 0]; then echo \[\033[01;91m\]\t]\[\033[00m\]; else echo \[\033[01;92m\]\t\[\033[00m\]; fi)] \[\033[01;93m\]\w\[\033[00m\] $ "`
-- `PS1="[\$(if [ \$? = 0 ]; then echo \[\033[92m\]\t\[\033[0m\]; else echo -e \[\033[91m\]\t\[\033[0m\]; fi;)] [\[\033[1;49;93m\]\w\[\033[0m\]]\$(__git_ps1) [\[\033[1;49;39m\]\$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\[\033[0m\]]\n$ "`
-
+Moved example PS1s to https://github.com/Namdrib/dotfiles/blob/a7a162485bf55b7f4ac763ea7e53fc86030cd3b7/system/.prompt
 
 ### File/path manipulation/other
 - Change to previous directory
@@ -48,7 +41,7 @@ ls [something] -1 | wc -l
 
 - Sort a text file and remove duplicate entries
 ```bash
-sort [someFile] | uniq -u | cat > file.txt
+sort [someFile] | uniq -u > file.txt
 #  ^ sort file    ^ Remove dupes  ^ output the result to the file
 ```
 
